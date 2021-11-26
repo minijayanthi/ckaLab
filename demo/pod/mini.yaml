@@ -1,0 +1,1612 @@
+apiVersion: v1
+items:
+- apiVersion: v1
+  kind: Pod
+  metadata:
+    annotations:
+      cni.projectcalico.org/containerID: 9d11d1f867300bd616968f62af58c2f8b6438011d0a11ab722322340e43ddc30
+      cni.projectcalico.org/podIP: 192.168.235.201/32
+      cni.projectcalico.org/podIPs: 192.168.235.201/32
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"v1","kind":"Pod","metadata":{"annotations":{},"name":"httpd","namespace":"default"},"spec":{"containers":[{"image":"httpd","name":"mycontainer","ports":[{"containerPort":80}]}]}}
+    creationTimestamp: "2021-11-13T17:02:23Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:kubectl.kubernetes.io/last-applied-configuration: {}
+        f:spec:
+          f:containers:
+            k:{"name":"mycontainer"}:
+              .: {}
+              f:image: {}
+              f:imagePullPolicy: {}
+              f:name: {}
+              f:ports:
+                .: {}
+                k:{"containerPort":80,"protocol":"TCP"}:
+                  .: {}
+                  f:containerPort: {}
+                  f:protocol: {}
+              f:resources: {}
+              f:terminationMessagePath: {}
+              f:terminationMessagePolicy: {}
+          f:dnsPolicy: {}
+          f:enableServiceLinks: {}
+          f:restartPolicy: {}
+          f:schedulerName: {}
+          f:securityContext: {}
+          f:terminationGracePeriodSeconds: {}
+      manager: kubectl-client-side-apply
+      operation: Update
+      time: "2021-11-13T17:02:23Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            f:cni.projectcalico.org/containerID: {}
+            f:cni.projectcalico.org/podIP: {}
+            f:cni.projectcalico.org/podIPs: {}
+      manager: calico
+      operation: Update
+      time: "2021-11-13T17:02:24Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:conditions:
+            k:{"type":"ContainersReady"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"Initialized"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"Ready"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+          f:containerStatuses: {}
+          f:hostIP: {}
+          f:phase: {}
+          f:podIP: {}
+          f:podIPs:
+            .: {}
+            k:{"ip":"192.168.235.201"}:
+              .: {}
+              f:ip: {}
+          f:startTime: {}
+      manager: kubelet
+      operation: Update
+      time: "2021-11-14T14:18:35Z"
+    name: httpd
+    namespace: default
+    resourceVersion: "11835"
+    uid: 729683ae-f875-4573-81ff-c9b8d1fe233e
+  spec:
+    containers:
+    - image: httpd
+      imagePullPolicy: Always
+      name: mycontainer
+      ports:
+      - containerPort: 80
+        protocol: TCP
+      resources: {}
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: default-token-r2m8c
+        readOnly: true
+    dnsPolicy: ClusterFirst
+    enableServiceLinks: true
+    nodeName: worker1
+    preemptionPolicy: PreemptLowerPriority
+    priority: 0
+    restartPolicy: Always
+    schedulerName: default-scheduler
+    securityContext: {}
+    serviceAccount: default
+    serviceAccountName: default
+    terminationGracePeriodSeconds: 30
+    tolerations:
+    - effect: NoExecute
+      key: node.kubernetes.io/not-ready
+      operator: Exists
+      tolerationSeconds: 300
+    - effect: NoExecute
+      key: node.kubernetes.io/unreachable
+      operator: Exists
+      tolerationSeconds: 300
+    volumes:
+    - name: default-token-r2m8c
+      secret:
+        defaultMode: 420
+        secretName: default-token-r2m8c
+  status:
+    conditions:
+    - lastProbeTime: null
+      lastTransitionTime: "2021-11-13T17:02:23Z"
+      status: "True"
+      type: Initialized
+    - lastProbeTime: null
+      lastTransitionTime: "2021-11-14T14:18:35Z"
+      status: "True"
+      type: Ready
+    - lastProbeTime: null
+      lastTransitionTime: "2021-11-14T14:18:35Z"
+      status: "True"
+      type: ContainersReady
+    - lastProbeTime: null
+      lastTransitionTime: "2021-11-13T17:02:23Z"
+      status: "True"
+      type: PodScheduled
+    containerStatuses:
+    - containerID: docker://d4cb4403851ef2c2503bb8c7334601d9b66e6cfe4d1a31ab102c174365e32b79
+      image: httpd:latest
+      imageID: docker-pullable://httpd@sha256:f70876d78442771406d7245b8d3425e8b0a86891c79811af94fb2e12af0fadeb
+      lastState:
+        terminated:
+          containerID: docker://5e05966f135ea0bbde6c048ceb6a00d76d88500d17b4bd60d0ae46789898b185
+          exitCode: 0
+          finishedAt: "2021-11-14T14:11:18Z"
+          reason: Completed
+          startedAt: "2021-11-14T14:03:47Z"
+      name: mycontainer
+      ready: true
+      restartCount: 2
+      started: true
+      state:
+        running:
+          startedAt: "2021-11-14T14:18:35Z"
+    hostIP: 172.31.30.156
+    phase: Running
+    podIP: 192.168.235.201
+    podIPs:
+    - ip: 192.168.235.201
+    qosClass: BestEffort
+    startTime: "2021-11-13T17:02:23Z"
+- apiVersion: v1
+  kind: Pod
+  metadata:
+    annotations:
+      cni.projectcalico.org/containerID: ce328d25e5e6935d47ac3370efed831a43047c02b40ce77a9c26125224fb4c64
+      cni.projectcalico.org/podIP: 192.168.189.77/32
+      cni.projectcalico.org/podIPs: 192.168.189.77/32
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"v1","kind":"Pod","metadata":{"annotations":{},"name":"multi-container","namespace":"default"},"spec":{"containers":[{"image":"nginx","name":"c1","ports":[{"containerPort":80}]},{"image":"tomcat","name":"c2","ports":[{"containerPort":8080}]}]}}
+    creationTimestamp: "2021-11-14T17:32:30Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:kubectl.kubernetes.io/last-applied-configuration: {}
+        f:spec:
+          f:containers:
+            k:{"name":"c1"}:
+              .: {}
+              f:image: {}
+              f:imagePullPolicy: {}
+              f:name: {}
+              f:ports:
+                .: {}
+                k:{"containerPort":80,"protocol":"TCP"}:
+                  .: {}
+                  f:containerPort: {}
+                  f:protocol: {}
+              f:resources: {}
+              f:terminationMessagePath: {}
+              f:terminationMessagePolicy: {}
+            k:{"name":"c2"}:
+              .: {}
+              f:image: {}
+              f:imagePullPolicy: {}
+              f:name: {}
+              f:ports:
+                .: {}
+                k:{"containerPort":8080,"protocol":"TCP"}:
+                  .: {}
+                  f:containerPort: {}
+                  f:protocol: {}
+              f:resources: {}
+              f:terminationMessagePath: {}
+              f:terminationMessagePolicy: {}
+          f:dnsPolicy: {}
+          f:enableServiceLinks: {}
+          f:restartPolicy: {}
+          f:schedulerName: {}
+          f:securityContext: {}
+          f:terminationGracePeriodSeconds: {}
+      manager: kubectl-client-side-apply
+      operation: Update
+      time: "2021-11-14T17:32:30Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            f:cni.projectcalico.org/containerID: {}
+            f:cni.projectcalico.org/podIP: {}
+            f:cni.projectcalico.org/podIPs: {}
+      manager: calico
+      operation: Update
+      time: "2021-11-14T17:32:31Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:conditions:
+            k:{"type":"ContainersReady"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"Initialized"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"Ready"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+          f:containerStatuses: {}
+          f:hostIP: {}
+          f:phase: {}
+          f:podIP: {}
+          f:podIPs:
+            .: {}
+            k:{"ip":"192.168.189.77"}:
+              .: {}
+              f:ip: {}
+          f:startTime: {}
+      manager: kubelet
+      operation: Update
+      time: "2021-11-14T17:32:33Z"
+    name: multi-container
+    namespace: default
+    resourceVersion: "28430"
+    uid: e6828759-be80-4a04-843a-0333afd14e99
+  spec:
+    containers:
+    - image: nginx
+      imagePullPolicy: Always
+      name: c1
+      ports:
+      - containerPort: 80
+        protocol: TCP
+      resources: {}
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: default-token-r2m8c
+        readOnly: true
+    - image: tomcat
+      imagePullPolicy: Always
+      name: c2
+      ports:
+      - containerPort: 8080
+        protocol: TCP
+      resources: {}
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: default-token-r2m8c
+        readOnly: true
+    dnsPolicy: ClusterFirst
+    enableServiceLinks: true
+    nodeName: worker2
+    preemptionPolicy: PreemptLowerPriority
+    priority: 0
+    restartPolicy: Always
+    schedulerName: default-scheduler
+    securityContext: {}
+    serviceAccount: default
+    serviceAccountName: default
+    terminationGracePeriodSeconds: 30
+    tolerations:
+    - effect: NoExecute
+      key: node.kubernetes.io/not-ready
+      operator: Exists
+      tolerationSeconds: 300
+    - effect: NoExecute
+      key: node.kubernetes.io/unreachable
+      operator: Exists
+      tolerationSeconds: 300
+    volumes:
+    - name: default-token-r2m8c
+      secret:
+        defaultMode: 420
+        secretName: default-token-r2m8c
+  status:
+    conditions:
+    - lastProbeTime: null
+      lastTransitionTime: "2021-11-14T17:32:30Z"
+      status: "True"
+      type: Initialized
+    - lastProbeTime: null
+      lastTransitionTime: "2021-11-14T17:32:33Z"
+      status: "True"
+      type: Ready
+    - lastProbeTime: null
+      lastTransitionTime: "2021-11-14T17:32:33Z"
+      status: "True"
+      type: ContainersReady
+    - lastProbeTime: null
+      lastTransitionTime: "2021-11-14T17:32:30Z"
+      status: "True"
+      type: PodScheduled
+    containerStatuses:
+    - containerID: docker://84aa91e1b941ed42547fff941cd3404f9058befa75823ef2fdca0bbba77cbc73
+      image: nginx:latest
+      imageID: docker-pullable://nginx@sha256:dfef797ddddfc01645503cef9036369f03ae920cac82d344d58b637ee861fda1
+      lastState: {}
+      name: c1
+      ready: true
+      restartCount: 0
+      started: true
+      state:
+        running:
+          startedAt: "2021-11-14T17:32:32Z"
+    - containerID: docker://09638a7d801c1f6ace9564af29dac7fda28e508c7d4b0f3ee8782d23e923dfab
+      image: tomcat:latest
+      imageID: docker-pullable://tomcat@sha256:509cf786b26a8bd43e58a90beba60bdfd6927d2ce9c7902cfa675d3ea9f4c631
+      lastState: {}
+      name: c2
+      ready: true
+      restartCount: 0
+      started: true
+      state:
+        running:
+          startedAt: "2021-11-14T17:32:33Z"
+    hostIP: 172.31.23.50
+    phase: Running
+    podIP: 192.168.189.77
+    podIPs:
+    - ip: 192.168.189.77
+    qosClass: BestEffort
+    startTime: "2021-11-14T17:32:30Z"
+- apiVersion: v1
+  kind: Pod
+  metadata:
+    annotations:
+      cni.projectcalico.org/containerID: 5e743d14fbcef4290dfdd962c6fe81afcbaeacd2ed935e95019e9f19c5769b56
+      cni.projectcalico.org/podIP: 192.168.235.203/32
+      cni.projectcalico.org/podIPs: 192.168.235.203/32
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"v1","kind":"Pod","metadata":{"annotations":{},"name":"node-selector-pod","namespace":"default"},"spec":{"containers":[{"image":"nginx","name":"nginx"}],"nodeSelector":{"color":"green"}}}
+    creationTimestamp: "2021-11-14T16:01:15Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:conditions:
+            .: {}
+            k:{"type":"PodScheduled"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:message: {}
+              f:reason: {}
+              f:status: {}
+              f:type: {}
+      manager: kube-scheduler
+      operation: Update
+      time: "2021-11-14T16:01:15Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:kubectl.kubernetes.io/last-applied-configuration: {}
+        f:spec:
+          f:containers:
+            k:{"name":"nginx"}:
+              .: {}
+              f:image: {}
+              f:imagePullPolicy: {}
+              f:name: {}
+              f:resources: {}
+              f:terminationMessagePath: {}
+              f:terminationMessagePolicy: {}
+          f:dnsPolicy: {}
+          f:enableServiceLinks: {}
+          f:nodeSelector:
+            .: {}
+            f:color: {}
+          f:restartPolicy: {}
+          f:schedulerName: {}
+          f:securityContext: {}
+          f:terminationGracePeriodSeconds: {}
+      manager: kubectl-client-side-apply
+      operation: Update
+      time: "2021-11-14T16:01:15Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            f:cni.projectcalico.org/containerID: {}
+            f:cni.projectcalico.org/podIP: {}
+            f:cni.projectcalico.org/podIPs: {}
+      manager: calico
+      operation: Update
+      time: "2021-11-14T16:03:38Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:conditions:
+            k:{"type":"ContainersReady"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"Initialized"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"Ready"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+          f:containerStatuses: {}
+          f:hostIP: {}
+          f:phase: {}
+          f:podIP: {}
+          f:podIPs:
+            .: {}
+            k:{"ip":"192.168.235.203"}:
+              .: {}
+              f:ip: {}
+          f:startTime: {}
+      manager: kubelet
+      operation: Update
+      time: "2021-11-14T16:03:41Z"
+    name: node-selector-pod
+    namespace: default
+    resourceVersion: "20748"
+    uid: 8f5d27a7-c15b-47f0-9421-3ca109e9bf04
+  spec:
+    containers:
+    - image: nginx
+      imagePullPolicy: Always
+      name: nginx
+      resources: {}
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: default-token-r2m8c
+        readOnly: true
+    dnsPolicy: ClusterFirst
+    enableServiceLinks: true
+    nodeName: worker1
+    nodeSelector:
+      color: green
+    preemptionPolicy: PreemptLowerPriority
+    priority: 0
+    restartPolicy: Always
+    schedulerName: default-scheduler
+    securityContext: {}
+    serviceAccount: default
+    serviceAccountName: default
+    terminationGracePeriodSeconds: 30
+    tolerations:
+    - effect: NoExecute
+      key: node.kubernetes.io/not-ready
+      operator: Exists
+      tolerationSeconds: 300
+    - effect: NoExecute
+      key: node.kubernetes.io/unreachable
+      operator: Exists
+      tolerationSeconds: 300
+    volumes:
+    - name: default-token-r2m8c
+      secret:
+        defaultMode: 420
+        secretName: default-token-r2m8c
+  status:
+    conditions:
+    - lastProbeTime: null
+      lastTransitionTime: "2021-11-14T16:03:37Z"
+      status: "True"
+      type: Initialized
+    - lastProbeTime: null
+      lastTransitionTime: "2021-11-14T16:03:41Z"
+      status: "True"
+      type: Ready
+    - lastProbeTime: null
+      lastTransitionTime: "2021-11-14T16:03:41Z"
+      status: "True"
+      type: ContainersReady
+    - lastProbeTime: null
+      lastTransitionTime: "2021-11-14T16:03:37Z"
+      status: "True"
+      type: PodScheduled
+    containerStatuses:
+    - containerID: docker://04b37a49cba5605578f963903993f9e1ebba462e5f7d904688ecf5b503d3f7e2
+      image: nginx:latest
+      imageID: docker-pullable://nginx@sha256:dfef797ddddfc01645503cef9036369f03ae920cac82d344d58b637ee861fda1
+      lastState: {}
+      name: nginx
+      ready: true
+      restartCount: 0
+      started: true
+      state:
+        running:
+          startedAt: "2021-11-14T16:03:40Z"
+    hostIP: 172.31.30.156
+    phase: Running
+    podIP: 192.168.235.203
+    podIPs:
+    - ip: 192.168.235.203
+    qosClass: BestEffort
+    startTime: "2021-11-14T16:03:37Z"
+- apiVersion: v1
+  kind: Pod
+  metadata:
+    annotations:
+      cni.projectcalico.org/containerID: 8fb29cc195b111c841e9d3417e4a142c322feb51313a4edab9adef93f4f8e295
+      cni.projectcalico.org/podIP: 192.168.235.207/32
+      cni.projectcalico.org/podIPs: 192.168.235.207/32
+    creationTimestamp: "2021-11-14T17:06:35Z"
+    labels:
+      run: pod1
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:labels:
+            .: {}
+            f:run: {}
+        f:spec:
+          f:containers:
+            k:{"name":"pod1"}:
+              .: {}
+              f:image: {}
+              f:imagePullPolicy: {}
+              f:name: {}
+              f:resources: {}
+              f:terminationMessagePath: {}
+              f:terminationMessagePolicy: {}
+          f:dnsPolicy: {}
+          f:enableServiceLinks: {}
+          f:restartPolicy: {}
+          f:schedulerName: {}
+          f:securityContext: {}
+          f:terminationGracePeriodSeconds: {}
+      manager: kubectl-run
+      operation: Update
+      time: "2021-11-14T17:06:35Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:cni.projectcalico.org/containerID: {}
+            f:cni.projectcalico.org/podIP: {}
+            f:cni.projectcalico.org/podIPs: {}
+      manager: calico
+      operation: Update
+      time: "2021-11-14T17:06:36Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:conditions:
+            k:{"type":"ContainersReady"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"Initialized"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"Ready"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+          f:containerStatuses: {}
+          f:hostIP: {}
+          f:phase: {}
+          f:podIP: {}
+          f:podIPs:
+            .: {}
+            k:{"ip":"192.168.235.207"}:
+              .: {}
+              f:ip: {}
+          f:startTime: {}
+      manager: kubelet
+      operation: Update
+      time: "2021-11-14T17:06:38Z"
+    name: pod1
+    namespace: default
+    resourceVersion: "26104"
+    uid: 418b2f61-9598-4d08-a032-ddcd5c6ff938
+  spec:
+    containers:
+    - image: nginx
+      imagePullPolicy: Always
+      name: pod1
+      resources: {}
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: default-token-r2m8c
+        readOnly: true
+    dnsPolicy: ClusterFirst
+    enableServiceLinks: true
+    nodeName: worker1
+    preemptionPolicy: PreemptLowerPriority
+    priority: 0
+    restartPolicy: Always
+    schedulerName: default-scheduler
+    securityContext: {}
+    serviceAccount: default
+    serviceAccountName: default
+    terminationGracePeriodSeconds: 30
+    tolerations:
+    - effect: NoExecute
+      key: node.kubernetes.io/not-ready
+      operator: Exists
+      tolerationSeconds: 300
+    - effect: NoExecute
+      key: node.kubernetes.io/unreachable
+      operator: Exists
+      tolerationSeconds: 300
+    volumes:
+    - name: default-token-r2m8c
+      secret:
+        defaultMode: 420
+        secretName: default-token-r2m8c
+  status:
+    conditions:
+    - lastProbeTime: null
+      lastTransitionTime: "2021-11-14T17:06:35Z"
+      status: "True"
+      type: Initialized
+    - lastProbeTime: null
+      lastTransitionTime: "2021-11-14T17:06:38Z"
+      status: "True"
+      type: Ready
+    - lastProbeTime: null
+      lastTransitionTime: "2021-11-14T17:06:38Z"
+      status: "True"
+      type: ContainersReady
+    - lastProbeTime: null
+      lastTransitionTime: "2021-11-14T17:06:35Z"
+      status: "True"
+      type: PodScheduled
+    containerStatuses:
+    - containerID: docker://7b774ce722c9f4281467d0ef29553f7bc976066f14ec556a85a81e7bc9e2b0de
+      image: nginx:latest
+      imageID: docker-pullable://nginx@sha256:dfef797ddddfc01645503cef9036369f03ae920cac82d344d58b637ee861fda1
+      lastState: {}
+      name: pod1
+      ready: true
+      restartCount: 0
+      started: true
+      state:
+        running:
+          startedAt: "2021-11-14T17:06:37Z"
+    hostIP: 172.31.30.156
+    phase: Running
+    podIP: 192.168.235.207
+    podIPs:
+    - ip: 192.168.235.207
+    qosClass: BestEffort
+    startTime: "2021-11-14T17:06:35Z"
+- apiVersion: v1
+  kind: Pod
+  metadata:
+    annotations:
+      cni.projectcalico.org/containerID: fae2a77d54d0a39995ba324e834a6f510396687210b5ef65ce5dc136ae42c1aa
+      cni.projectcalico.org/podIP: 192.168.235.208/32
+      cni.projectcalico.org/podIPs: 192.168.235.208/32
+    creationTimestamp: "2021-11-14T17:07:01Z"
+    labels:
+      run: pod2
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:labels:
+            .: {}
+            f:run: {}
+        f:spec:
+          f:containers:
+            k:{"name":"pod2"}:
+              .: {}
+              f:image: {}
+              f:imagePullPolicy: {}
+              f:name: {}
+              f:resources: {}
+              f:terminationMessagePath: {}
+              f:terminationMessagePolicy: {}
+          f:dnsPolicy: {}
+          f:enableServiceLinks: {}
+          f:restartPolicy: {}
+          f:schedulerName: {}
+          f:securityContext: {}
+          f:terminationGracePeriodSeconds: {}
+      manager: kubectl-run
+      operation: Update
+      time: "2021-11-14T17:07:01Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:cni.projectcalico.org/containerID: {}
+            f:cni.projectcalico.org/podIP: {}
+            f:cni.projectcalico.org/podIPs: {}
+      manager: calico
+      operation: Update
+      time: "2021-11-14T17:07:03Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:conditions:
+            k:{"type":"ContainersReady"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"Initialized"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"Ready"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+          f:containerStatuses: {}
+          f:hostIP: {}
+          f:phase: {}
+          f:podIP: {}
+          f:podIPs:
+            .: {}
+            k:{"ip":"192.168.235.208"}:
+              .: {}
+              f:ip: {}
+          f:startTime: {}
+      manager: kubelet
+      operation: Update
+      time: "2021-11-14T17:07:05Z"
+    name: pod2
+    namespace: default
+    resourceVersion: "26150"
+    uid: 766bbaf9-603f-4adc-bd2c-1f52931c6a77
+  spec:
+    containers:
+    - image: nginx
+      imagePullPolicy: Always
+      name: pod2
+      resources: {}
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: default-token-r2m8c
+        readOnly: true
+    dnsPolicy: ClusterFirst
+    enableServiceLinks: true
+    nodeName: worker1
+    preemptionPolicy: PreemptLowerPriority
+    priority: 0
+    restartPolicy: Always
+    schedulerName: default-scheduler
+    securityContext: {}
+    serviceAccount: default
+    serviceAccountName: default
+    terminationGracePeriodSeconds: 30
+    tolerations:
+    - effect: NoExecute
+      key: node.kubernetes.io/not-ready
+      operator: Exists
+      tolerationSeconds: 300
+    - effect: NoExecute
+      key: node.kubernetes.io/unreachable
+      operator: Exists
+      tolerationSeconds: 300
+    volumes:
+    - name: default-token-r2m8c
+      secret:
+        defaultMode: 420
+        secretName: default-token-r2m8c
+  status:
+    conditions:
+    - lastProbeTime: null
+      lastTransitionTime: "2021-11-14T17:07:01Z"
+      status: "True"
+      type: Initialized
+    - lastProbeTime: null
+      lastTransitionTime: "2021-11-14T17:07:05Z"
+      status: "True"
+      type: Ready
+    - lastProbeTime: null
+      lastTransitionTime: "2021-11-14T17:07:05Z"
+      status: "True"
+      type: ContainersReady
+    - lastProbeTime: null
+      lastTransitionTime: "2021-11-14T17:07:01Z"
+      status: "True"
+      type: PodScheduled
+    containerStatuses:
+    - containerID: docker://3132ffef5bc19651dd38d1b80129b5b136f2f69fa7d471080df3b7afddf5ef6a
+      image: nginx:latest
+      imageID: docker-pullable://nginx@sha256:dfef797ddddfc01645503cef9036369f03ae920cac82d344d58b637ee861fda1
+      lastState: {}
+      name: pod2
+      ready: true
+      restartCount: 0
+      started: true
+      state:
+        running:
+          startedAt: "2021-11-14T17:07:04Z"
+    hostIP: 172.31.30.156
+    phase: Running
+    podIP: 192.168.235.208
+    podIPs:
+    - ip: 192.168.235.208
+    qosClass: BestEffort
+    startTime: "2021-11-14T17:07:01Z"
+- apiVersion: v1
+  kind: Pod
+  metadata:
+    annotations:
+      cni.projectcalico.org/containerID: 4e5369da4cc5526f7f409af278f754f14b1cde01a22355298ce1716178160264
+      cni.projectcalico.org/podIP: 192.168.235.209/32
+      cni.projectcalico.org/podIPs: 192.168.235.209/32
+    creationTimestamp: "2021-11-14T17:07:09Z"
+    labels:
+      run: pod3
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:labels:
+            .: {}
+            f:run: {}
+        f:spec:
+          f:containers:
+            k:{"name":"pod3"}:
+              .: {}
+              f:image: {}
+              f:imagePullPolicy: {}
+              f:name: {}
+              f:resources: {}
+              f:terminationMessagePath: {}
+              f:terminationMessagePolicy: {}
+          f:dnsPolicy: {}
+          f:enableServiceLinks: {}
+          f:restartPolicy: {}
+          f:schedulerName: {}
+          f:securityContext: {}
+          f:terminationGracePeriodSeconds: {}
+      manager: kubectl-run
+      operation: Update
+      time: "2021-11-14T17:07:09Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:cni.projectcalico.org/containerID: {}
+            f:cni.projectcalico.org/podIP: {}
+            f:cni.projectcalico.org/podIPs: {}
+      manager: calico
+      operation: Update
+      time: "2021-11-14T17:07:10Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:conditions:
+            k:{"type":"ContainersReady"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"Initialized"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"Ready"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+          f:containerStatuses: {}
+          f:hostIP: {}
+          f:phase: {}
+          f:podIP: {}
+          f:podIPs:
+            .: {}
+            k:{"ip":"192.168.235.209"}:
+              .: {}
+              f:ip: {}
+          f:startTime: {}
+      manager: kubelet
+      operation: Update
+      time: "2021-11-14T17:07:12Z"
+    name: pod3
+    namespace: default
+    resourceVersion: "26174"
+    uid: ae6e91e0-168d-427b-8ade-587f361fa5b2
+  spec:
+    containers:
+    - image: nginx
+      imagePullPolicy: Always
+      name: pod3
+      resources: {}
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: default-token-r2m8c
+        readOnly: true
+    dnsPolicy: ClusterFirst
+    enableServiceLinks: true
+    nodeName: worker1
+    preemptionPolicy: PreemptLowerPriority
+    priority: 0
+    restartPolicy: Always
+    schedulerName: default-scheduler
+    securityContext: {}
+    serviceAccount: default
+    serviceAccountName: default
+    terminationGracePeriodSeconds: 30
+    tolerations:
+    - effect: NoExecute
+      key: node.kubernetes.io/not-ready
+      operator: Exists
+      tolerationSeconds: 300
+    - effect: NoExecute
+      key: node.kubernetes.io/unreachable
+      operator: Exists
+      tolerationSeconds: 300
+    volumes:
+    - name: default-token-r2m8c
+      secret:
+        defaultMode: 420
+        secretName: default-token-r2m8c
+  status:
+    conditions:
+    - lastProbeTime: null
+      lastTransitionTime: "2021-11-14T17:07:09Z"
+      status: "True"
+      type: Initialized
+    - lastProbeTime: null
+      lastTransitionTime: "2021-11-14T17:07:12Z"
+      status: "True"
+      type: Ready
+    - lastProbeTime: null
+      lastTransitionTime: "2021-11-14T17:07:12Z"
+      status: "True"
+      type: ContainersReady
+    - lastProbeTime: null
+      lastTransitionTime: "2021-11-14T17:07:09Z"
+      status: "True"
+      type: PodScheduled
+    containerStatuses:
+    - containerID: docker://b6b4c77f7f060b20cf91f6be52aec3864a5ab976d2d9886e28e0d0098e97b9da
+      image: nginx:latest
+      imageID: docker-pullable://nginx@sha256:dfef797ddddfc01645503cef9036369f03ae920cac82d344d58b637ee861fda1
+      lastState: {}
+      name: pod3
+      ready: true
+      restartCount: 0
+      started: true
+      state:
+        running:
+          startedAt: "2021-11-14T17:07:11Z"
+    hostIP: 172.31.30.156
+    phase: Running
+    podIP: 192.168.235.209
+    podIPs:
+    - ip: 192.168.235.209
+    qosClass: BestEffort
+    startTime: "2021-11-14T17:07:09Z"
+- apiVersion: v1
+  kind: Pod
+  metadata:
+    annotations:
+      cni.projectcalico.org/containerID: efb848e7155a273ea82f63c3f2088b8ed5cb13e39a9df30916df91d269650321
+      cni.projectcalico.org/podIP: 192.168.235.206/32
+      cni.projectcalico.org/podIPs: 192.168.235.206/32
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"v1","kind":"Pod","metadata":{"annotations":{},"creationTimestamp":null,"name":"preferred-affinity-pod","namespace":"default"},"spec":{"affinity":{"nodeAffinity":{"preferredDuringSchedulingIgnoredDuringExecution":[{"preference":{"matchExpressions":[{"key":"color","operator":"In","values":["purple"]}]},"weight":100}]}},"containers":[{"image":"nginx","name":"pod","ports":[{"containerPort":80}]}]}}
+    creationTimestamp: "2021-11-14T16:33:35Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:kubectl.kubernetes.io/last-applied-configuration: {}
+        f:spec:
+          f:affinity:
+            .: {}
+            f:nodeAffinity:
+              .: {}
+              f:preferredDuringSchedulingIgnoredDuringExecution: {}
+          f:containers:
+            k:{"name":"pod"}:
+              .: {}
+              f:image: {}
+              f:imagePullPolicy: {}
+              f:name: {}
+              f:ports:
+                .: {}
+                k:{"containerPort":80,"protocol":"TCP"}:
+                  .: {}
+                  f:containerPort: {}
+                  f:protocol: {}
+              f:resources: {}
+              f:terminationMessagePath: {}
+              f:terminationMessagePolicy: {}
+          f:dnsPolicy: {}
+          f:enableServiceLinks: {}
+          f:restartPolicy: {}
+          f:schedulerName: {}
+          f:securityContext: {}
+          f:terminationGracePeriodSeconds: {}
+      manager: kubectl-client-side-apply
+      operation: Update
+      time: "2021-11-14T16:33:35Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            f:cni.projectcalico.org/containerID: {}
+            f:cni.projectcalico.org/podIP: {}
+            f:cni.projectcalico.org/podIPs: {}
+      manager: calico
+      operation: Update
+      time: "2021-11-14T16:33:36Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:conditions:
+            k:{"type":"ContainersReady"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"Initialized"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"Ready"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+          f:containerStatuses: {}
+          f:hostIP: {}
+          f:phase: {}
+          f:podIP: {}
+          f:podIPs:
+            .: {}
+            k:{"ip":"192.168.235.206"}:
+              .: {}
+              f:ip: {}
+          f:startTime: {}
+      manager: kubelet
+      operation: Update
+      time: "2021-11-14T16:33:38Z"
+    name: preferred-affinity-pod
+    namespace: default
+    resourceVersion: "23313"
+    uid: 5b3624c1-d063-461d-b644-b34a5b8028b1
+  spec:
+    affinity:
+      nodeAffinity:
+        preferredDuringSchedulingIgnoredDuringExecution:
+        - preference:
+            matchExpressions:
+            - key: color
+              operator: In
+              values:
+              - purple
+          weight: 100
+    containers:
+    - image: nginx
+      imagePullPolicy: Always
+      name: pod
+      ports:
+      - containerPort: 80
+        protocol: TCP
+      resources: {}
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: default-token-r2m8c
+        readOnly: true
+    dnsPolicy: ClusterFirst
+    enableServiceLinks: true
+    nodeName: worker1
+    preemptionPolicy: PreemptLowerPriority
+    priority: 0
+    restartPolicy: Always
+    schedulerName: default-scheduler
+    securityContext: {}
+    serviceAccount: default
+    serviceAccountName: default
+    terminationGracePeriodSeconds: 30
+    tolerations:
+    - effect: NoExecute
+      key: node.kubernetes.io/not-ready
+      operator: Exists
+      tolerationSeconds: 300
+    - effect: NoExecute
+      key: node.kubernetes.io/unreachable
+      operator: Exists
+      tolerationSeconds: 300
+    volumes:
+    - name: default-token-r2m8c
+      secret:
+        defaultMode: 420
+        secretName: default-token-r2m8c
+  status:
+    conditions:
+    - lastProbeTime: null
+      lastTransitionTime: "2021-11-14T16:33:35Z"
+      status: "True"
+      type: Initialized
+    - lastProbeTime: null
+      lastTransitionTime: "2021-11-14T16:33:38Z"
+      status: "True"
+      type: Ready
+    - lastProbeTime: null
+      lastTransitionTime: "2021-11-14T16:33:38Z"
+      status: "True"
+      type: ContainersReady
+    - lastProbeTime: null
+      lastTransitionTime: "2021-11-14T16:33:35Z"
+      status: "True"
+      type: PodScheduled
+    containerStatuses:
+    - containerID: docker://c393ae0f064f4c44bbbecd066f8c5b424a37b747731bd71634f825e08ed27436
+      image: nginx:latest
+      imageID: docker-pullable://nginx@sha256:dfef797ddddfc01645503cef9036369f03ae920cac82d344d58b637ee861fda1
+      lastState: {}
+      name: pod
+      ready: true
+      restartCount: 0
+      started: true
+      state:
+        running:
+          startedAt: "2021-11-14T16:33:38Z"
+    hostIP: 172.31.30.156
+    phase: Running
+    podIP: 192.168.235.206
+    podIPs:
+    - ip: 192.168.235.206
+    qosClass: BestEffort
+    startTime: "2021-11-14T16:33:35Z"
+- apiVersion: v1
+  kind: Pod
+  metadata:
+    annotations:
+      cni.projectcalico.org/containerID: b3196e7b37d2f0494f7ae672c25156cb97e9bc7c3b2ec2b7fe6edf27ecd26d81
+      cni.projectcalico.org/podIP: 192.168.235.205/32
+      cni.projectcalico.org/podIPs: 192.168.235.205/32
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"v1","kind":"Pod","metadata":{"annotations":{},"name":"required-affinity-pod","namespace":"default"},"spec":{"affinity":{"nodeAffinity":{"requiredDuringSchedulingIgnoredDuringExecution":{"nodeSelectorTerms":[{"matchExpressions":[{"key":"color","operator":"In","values":["green","red"]}]}]}}},"containers":[{"image":"nginx","name":"nginx"}]}}
+    creationTimestamp: "2021-11-14T16:32:23Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:kubectl.kubernetes.io/last-applied-configuration: {}
+        f:spec:
+          f:affinity:
+            .: {}
+            f:nodeAffinity:
+              .: {}
+              f:requiredDuringSchedulingIgnoredDuringExecution:
+                .: {}
+                f:nodeSelectorTerms: {}
+          f:containers:
+            k:{"name":"nginx"}:
+              .: {}
+              f:image: {}
+              f:imagePullPolicy: {}
+              f:name: {}
+              f:resources: {}
+              f:terminationMessagePath: {}
+              f:terminationMessagePolicy: {}
+          f:dnsPolicy: {}
+          f:enableServiceLinks: {}
+          f:restartPolicy: {}
+          f:schedulerName: {}
+          f:securityContext: {}
+          f:terminationGracePeriodSeconds: {}
+      manager: kubectl-client-side-apply
+      operation: Update
+      time: "2021-11-14T16:32:23Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            f:cni.projectcalico.org/containerID: {}
+            f:cni.projectcalico.org/podIP: {}
+            f:cni.projectcalico.org/podIPs: {}
+      manager: calico
+      operation: Update
+      time: "2021-11-14T16:32:24Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:conditions:
+            k:{"type":"ContainersReady"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"Initialized"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"Ready"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+          f:containerStatuses: {}
+          f:hostIP: {}
+          f:phase: {}
+          f:podIP: {}
+          f:podIPs:
+            .: {}
+            k:{"ip":"192.168.235.205"}:
+              .: {}
+              f:ip: {}
+          f:startTime: {}
+      manager: kubelet
+      operation: Update
+      time: "2021-11-14T16:32:26Z"
+    name: required-affinity-pod
+    namespace: default
+    resourceVersion: "23198"
+    uid: 4c554f7d-0d6e-455d-9ca9-bd57c02f1635
+  spec:
+    affinity:
+      nodeAffinity:
+        requiredDuringSchedulingIgnoredDuringExecution:
+          nodeSelectorTerms:
+          - matchExpressions:
+            - key: color
+              operator: In
+              values:
+              - green
+              - red
+    containers:
+    - image: nginx
+      imagePullPolicy: Always
+      name: nginx
+      resources: {}
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: default-token-r2m8c
+        readOnly: true
+    dnsPolicy: ClusterFirst
+    enableServiceLinks: true
+    nodeName: worker1
+    preemptionPolicy: PreemptLowerPriority
+    priority: 0
+    restartPolicy: Always
+    schedulerName: default-scheduler
+    securityContext: {}
+    serviceAccount: default
+    serviceAccountName: default
+    terminationGracePeriodSeconds: 30
+    tolerations:
+    - effect: NoExecute
+      key: node.kubernetes.io/not-ready
+      operator: Exists
+      tolerationSeconds: 300
+    - effect: NoExecute
+      key: node.kubernetes.io/unreachable
+      operator: Exists
+      tolerationSeconds: 300
+    volumes:
+    - name: default-token-r2m8c
+      secret:
+        defaultMode: 420
+        secretName: default-token-r2m8c
+  status:
+    conditions:
+    - lastProbeTime: null
+      lastTransitionTime: "2021-11-14T16:32:23Z"
+      status: "True"
+      type: Initialized
+    - lastProbeTime: null
+      lastTransitionTime: "2021-11-14T16:32:26Z"
+      status: "True"
+      type: Ready
+    - lastProbeTime: null
+      lastTransitionTime: "2021-11-14T16:32:26Z"
+      status: "True"
+      type: ContainersReady
+    - lastProbeTime: null
+      lastTransitionTime: "2021-11-14T16:32:23Z"
+      status: "True"
+      type: PodScheduled
+    containerStatuses:
+    - containerID: docker://aa779d4b61f661c3dd9fa2f1775a021830bda8f487f025ca98522e8063146b49
+      image: nginx:latest
+      imageID: docker-pullable://nginx@sha256:dfef797ddddfc01645503cef9036369f03ae920cac82d344d58b637ee861fda1
+      lastState: {}
+      name: nginx
+      ready: true
+      restartCount: 0
+      started: true
+      state:
+        running:
+          startedAt: "2021-11-14T16:32:26Z"
+    hostIP: 172.31.30.156
+    phase: Running
+    podIP: 192.168.235.205
+    podIPs:
+    - ip: 192.168.235.205
+    qosClass: BestEffort
+    startTime: "2021-11-14T16:32:23Z"
+- apiVersion: v1
+  kind: Pod
+  metadata:
+    annotations:
+      cni.projectcalico.org/containerID: 30467229ef0b7487d09a6187e17b89f93a5b152cce8da8dafa20b6d3e2eb2a5f
+      cni.projectcalico.org/podIP: 192.168.235.202/32
+      cni.projectcalico.org/podIPs: 192.168.235.202/32
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"v1","kind":"Pod","metadata":{"annotations":{},"creationTimestamp":null,"labels":{"run":"secondpod"},"name":"secondpod","namespace":"default"},"spec":{"containers":[{"image":"nginx","name":"secondpod","ports":[{"containerPort":80}],"resources":{}}],"dnsPolicy":"ClusterFirst","restartPolicy":"Always"},"status":{}}
+    creationTimestamp: "2021-11-13T17:39:04Z"
+    labels:
+      run: secondpod
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:kubectl.kubernetes.io/last-applied-configuration: {}
+          f:labels:
+            .: {}
+            f:run: {}
+        f:spec:
+          f:containers:
+            k:{"name":"secondpod"}:
+              .: {}
+              f:image: {}
+              f:imagePullPolicy: {}
+              f:name: {}
+              f:ports:
+                .: {}
+                k:{"containerPort":80,"protocol":"TCP"}:
+                  .: {}
+                  f:containerPort: {}
+                  f:protocol: {}
+              f:resources: {}
+              f:terminationMessagePath: {}
+              f:terminationMessagePolicy: {}
+          f:dnsPolicy: {}
+          f:enableServiceLinks: {}
+          f:restartPolicy: {}
+          f:schedulerName: {}
+          f:securityContext: {}
+          f:terminationGracePeriodSeconds: {}
+      manager: kubectl-client-side-apply
+      operation: Update
+      time: "2021-11-13T17:39:04Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            f:cni.projectcalico.org/containerID: {}
+            f:cni.projectcalico.org/podIP: {}
+            f:cni.projectcalico.org/podIPs: {}
+      manager: calico
+      operation: Update
+      time: "2021-11-13T17:39:05Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:conditions:
+            k:{"type":"ContainersReady"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"Initialized"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"Ready"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+          f:containerStatuses: {}
+          f:hostIP: {}
+          f:phase: {}
+          f:podIP: {}
+          f:podIPs:
+            .: {}
+            k:{"ip":"192.168.235.202"}:
+              .: {}
+              f:ip: {}
+          f:startTime: {}
+      manager: kubelet
+      operation: Update
+      time: "2021-11-14T14:18:38Z"
+    name: secondpod
+    namespace: default
+    resourceVersion: "11842"
+    uid: 2fdbdb73-5dac-486b-890d-8de062a40d76
+  spec:
+    containers:
+    - image: nginx
+      imagePullPolicy: Always
+      name: secondpod
+      ports:
+      - containerPort: 80
+        protocol: TCP
+      resources: {}
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: default-token-r2m8c
+        readOnly: true
+    dnsPolicy: ClusterFirst
+    enableServiceLinks: true
+    nodeName: worker1
+    preemptionPolicy: PreemptLowerPriority
+    priority: 0
+    restartPolicy: Always
+    schedulerName: default-scheduler
+    securityContext: {}
+    serviceAccount: default
+    serviceAccountName: default
+    terminationGracePeriodSeconds: 30
+    tolerations:
+    - effect: NoExecute
+      key: node.kubernetes.io/not-ready
+      operator: Exists
+      tolerationSeconds: 300
+    - effect: NoExecute
+      key: node.kubernetes.io/unreachable
+      operator: Exists
+      tolerationSeconds: 300
+    volumes:
+    - name: default-token-r2m8c
+      secret:
+        defaultMode: 420
+        secretName: default-token-r2m8c
+  status:
+    conditions:
+    - lastProbeTime: null
+      lastTransitionTime: "2021-11-13T17:39:04Z"
+      status: "True"
+      type: Initialized
+    - lastProbeTime: null
+      lastTransitionTime: "2021-11-14T14:18:38Z"
+      status: "True"
+      type: Ready
+    - lastProbeTime: null
+      lastTransitionTime: "2021-11-14T14:18:38Z"
+      status: "True"
+      type: ContainersReady
+    - lastProbeTime: null
+      lastTransitionTime: "2021-11-13T17:39:04Z"
+      status: "True"
+      type: PodScheduled
+    containerStatuses:
+    - containerID: docker://229b446858395f6b3287593918583fbf38b19d02d81c6ddf61c8f8c1b50fe31d
+      image: nginx:latest
+      imageID: docker-pullable://nginx@sha256:dfef797ddddfc01645503cef9036369f03ae920cac82d344d58b637ee861fda1
+      lastState:
+        terminated:
+          containerID: docker://0e3d872b23095bb0df7c9de4de9871c5aa9c1849191edc5d86bced82a9b33584
+          exitCode: 0
+          finishedAt: "2021-11-14T14:11:17Z"
+          reason: Completed
+          startedAt: "2021-11-14T14:03:48Z"
+      name: secondpod
+      ready: true
+      restartCount: 2
+      started: true
+      state:
+        running:
+          startedAt: "2021-11-14T14:18:37Z"
+    hostIP: 172.31.30.156
+    phase: Running
+    podIP: 192.168.235.202
+    podIPs:
+    - ip: 192.168.235.202
+    qosClass: BestEffort
+    startTime: "2021-11-13T17:39:04Z"
+kind: List
+metadata:
+  resourceVersion: ""
+  selfLink: ""

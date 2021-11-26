@@ -1,0 +1,9 @@
+apiVersion: v1                  # version of api-resource
+kind: Pod                       # api-resourse 
+metadata:                       # information of the api-resource
+  name: node-name-pod
+spec:                            # configuration of the api-resource
+  containers:
+  - name: nginx
+    image: nginx
+  nodeName: worker2

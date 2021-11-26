@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+ name: envpod-declarative
+spec:
+  containers:
+  - env:
+    - name: KEY
+      value: VALUE
+    - name: KEY2
+      value: Val2
+    image: nginx
+    name: envpod
+    ports:
+    - containerPort: 80

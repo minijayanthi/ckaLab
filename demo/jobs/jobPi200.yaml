@@ -1,0 +1,16 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+ name: print-pivalue
+spec:
+ template:
+  metadata:
+   labels:
+    job: print-pivalue
+  spec:
+   containers:
+   - name: print-pi-test
+     image: perl
+     command: ["perl", "-Mbignum=bpi","-wle","print bpi(200)"]
+   restartPolicy: Never
+

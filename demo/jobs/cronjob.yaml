@@ -1,0 +1,19 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata: 
+ name: cronjob
+spec: 
+ schedule: '* * * * *'
+ jobTemplate:
+  spec: 
+   template: 
+    metadata: 
+     labels: 
+      job: hello
+    spec:
+     containers: 
+     - image: alpine
+       name: print-hello
+       command: ['date']
+     restartPolicy: Never
+
