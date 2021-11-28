@@ -1,0 +1,91 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+ name: account
+spec:
+ replicas: 3
+ template:
+  metadata:
+   labels:
+    app: account
+  spec:
+   containers:
+   - name: acc
+     image: hashicorp/http-echo
+     args:
+     - "-text=account service"
+ selector:
+  matchLabels:
+   app: account
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+ name: cart
+spec:
+ replicas: 3
+ template:
+  metadata:
+   labels:
+    app: cart
+  spec:
+   containers:
+   - name: cart
+     image: hashicorp/http-echo
+     args:
+     - "-text=cart service"
+ selector:
+  matchLabels:
+   app: cart
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+ name: payment
+spec:
+ replicas: 3
+ template:
+  metadata:
+   labels:
+    app: payment
+  spec:
+   containers:
+   - name: pay
+     image: hashicorp/http-echo
+     args:
+     - "-text=payment service"
+ selector:
+  matchLabels:
+   app: payment
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: account
+spec:
+  selector:
+    app: account
+  ports:
+  - port: 5678
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: payment
+spec:
+  selector:
+    app: payment
+  ports:
+  - port: 5678
+
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: cart
+spec:
+  selector:
+    app: cart
+  ports:
+  - port: 5678
+
